@@ -27,7 +27,7 @@ public class MenuCarta extends Menu {
         this.valorBebida = valorBebida;
     }
 
-    public void establecerPorcentaje(int porcentaje) {
+    public void establecerPorcentaje(double porcentaje) {
         this.porcentaje = ((valorIniM * porcentaje) / 100);
     }
     
