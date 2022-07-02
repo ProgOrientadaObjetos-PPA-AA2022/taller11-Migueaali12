@@ -61,13 +61,16 @@ public class Cuenta {
     @Override
     public String toString() {
         String cadena = String.format("Factura\n"
-                + "Cliente: %s\n"
-                + "Menu del Dia:\n",
+                + "Cliente: %s\n",              
                 obtenerNombreC());
-                
         
+        for (int i = 0; i < listaMenu.size() ; i++) {
+            
+            cadena = String.format("%s%s",cadena ,listaMenu);            
+        }
         
-        
+        return cadena;
+    
     }
     
 }

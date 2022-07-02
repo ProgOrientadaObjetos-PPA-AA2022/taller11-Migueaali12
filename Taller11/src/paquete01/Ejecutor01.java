@@ -5,6 +5,10 @@
  */
 package paquete01;
 
+import paquete03.MenuDelDia;
+import paquete03.MenuEconomico;
+import paquete03.MenuNinios;
+
 /**
  *
  * @author reroes
@@ -15,7 +19,13 @@ public class Ejecutor01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        MenuNinios menuN1 = new MenuNinios(1, 1.50, "Niños 01" ,2);
+        MenuNinios menuN2 = new MenuNinios(1, 1.50, "Niños 02" ,3);
+        MenuEconomico menuEco = new MenuEconomico(25, "Econo 001", 4);
+        MenuDelDia menuD = new MenuDelDia(1, 1, "Dia 001", 5);
+        
+        
     }
     
     

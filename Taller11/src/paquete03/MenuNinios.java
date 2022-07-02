@@ -37,4 +37,19 @@ public class MenuNinios extends Menu {
         return valorPastel;
     }
     
+    @Override
+    public String toString() {
+        String cadena = String.format("Menu de niños:\n"
+                + "\tPlato: %s\n"
+                + "\tValor inicial: %.2f\n"
+                + "\tValor helado: %.2f\n"
+                + "\tValor pastel: %.2f\n"          
+                + "\tValor del Menu: %.2f\n",
+                obtenerNombreP(), valorIniM, valorHelado, valorPastel,
+                 valorM);
+                    
+        return cadena;
+    
+    }
+    
 }
