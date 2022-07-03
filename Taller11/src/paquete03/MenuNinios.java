@@ -16,6 +16,13 @@ public class MenuNinios extends Menu {
         this.valorPastel = valorP;
     }
     
+    public MenuNinios(String nombre, double valor, double valorH, 
+            double valorP) {
+        super(nombre, valor);
+        this.valorHelado = valorH;
+        this.valorPastel = valorP;
+    }
+    
     public void establecerValorHelado(double valorPostre) {
         this.valorHelado = valorPostre;
     }

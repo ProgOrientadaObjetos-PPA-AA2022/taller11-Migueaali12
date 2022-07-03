@@ -5,6 +5,10 @@
  */
 package paquete01;
 
+import java.util.ArrayList;
+import paquete02.Cuenta;
+import paquete02.Menu;
+import paquete03.MenuCarta;
 import paquete03.MenuDelDia;
 import paquete03.MenuEconomico;
 import paquete03.MenuNinios;
@@ -21,10 +25,30 @@ public class Ejecutor01 {
     public static void main(String[] args) {
         
         MenuNinios menuN1 = new MenuNinios(1, 1.50, "Niños 01" ,2);
-        MenuNinios menuN2 = new MenuNinios(1, 1.50, "Niños 02" ,3);
-        MenuEconomico menuEco = new MenuEconomico(25, "Econo 001", 4);
-        MenuDelDia menuD = new MenuDelDia(1, 1, "Dia 001", 5);
+        menuN1.establecerValorM();
         
+        MenuNinios menuN2 = new MenuNinios(1, 1.50, "Niños 02" ,3);
+        menuN2.establecerValorM();
+        
+        MenuEconomico menuEco = new MenuEconomico(25, "Econo 001", 4);
+        menuEco.establecerValorM();
+        
+        MenuDelDia menuD = new MenuDelDia(1, 1, "Dia 001", 5);
+        menuD.establecerValorM();
+        
+        MenuCarta menuC = new MenuCarta(1.5, 2.0, 10, "Carta 001", 6);
+        menuC.establecerValorM();
+        
+        ArrayList<Menu> listaMenu = new ArrayList();
+        listaMenu.add(menuN1);
+        listaMenu.add(menuN2);
+        listaMenu.add(menuEco);
+        listaMenu.add(menuD);
+        listaMenu.add(menuC);       
+        
+        Cuenta cuenta1 = new Cuenta("René Elizalde", listaMenu, 10);
+        
+        System.out.println(cuenta1);
         
     }
     

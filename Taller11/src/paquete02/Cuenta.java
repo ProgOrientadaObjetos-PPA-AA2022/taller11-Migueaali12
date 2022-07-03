@@ -12,6 +12,17 @@ public class Cuenta {
     protected double subtotal;
     protected double iva;
 
+    public Cuenta(String nombreC, ArrayList<Menu> listaMenu, double iva) {
+        this.nombreC = nombreC;
+        this.listaMenu = listaMenu;
+        this.iva = iva;
+        calcularSubtotal();
+        calcularValorT();
+        this.valorT = obtenerValorT();
+        this.subtotal = obtenerSubtotal();
+        
+    }
+    
     public void establecerNombreC(String nombreC) {
         this.nombreC = nombreC;
     }
@@ -21,21 +32,20 @@ public class Cuenta {
     }
 
     public void calcularValorT() {
-        this.valorT = (subtotal + iva);
+        double ive = (subtotal * iva) / 100;
+        this.valorT = (subtotal + ive);
     }
 
     public void calcularSubtotal() {
-        double suma = 0;
         for (int i = 0; i < listaMenu.size() ; i++) {
-            suma = suma + listaMenu.get(i).obtenerValorM();
+            subtotal += listaMenu.get(i).obtenerValorM();
             
         }
         
-        subtotal = suma;
     }
 
     public void establecerIva(double iva) {
-        this.iva = ((subtotal * iva) / 100);
+        this.iva = iva;
     }
 
     public String obtenerNombreC() {
@@ -66,8 +76,16 @@ public class Cuenta {
         
         for (int i = 0; i < listaMenu.size() ; i++) {
             
-            cadena = String.format("%s%s",cadena ,listaMenu);            
+            cadena = String.format("%s%s\n",cadena ,listaMenu.get(i));            
         }
+        
+        String porcentaje = "%";
+        
+        cadena = String.format("%s\n"
+                + "Subtotal: %.2f\n"
+                + "Iva: %.1f%s\n"
+                + "Total a pagar: %.2f\n",
+                cadena, subtotal, iva, porcentaje, valorT);
         
         return cadena;
     

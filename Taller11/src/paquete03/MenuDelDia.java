@@ -16,6 +16,13 @@ public class MenuDelDia extends Menu {
         this.valorBebida = valorB;
     }
     
+    public MenuDelDia(String nombre, double valor, double valorP, 
+            double valorB) {
+        super(nombre, valor);
+        this.valorPostre = valorP;
+        this.valorBebida = valorB;
+    }
+    
     public void establecerValorPostre(double valorPostre) {
         this.valorPostre = valorPostre;
     }

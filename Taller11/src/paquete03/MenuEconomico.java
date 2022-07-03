@@ -8,17 +8,24 @@ public class MenuEconomico extends Menu {
     private double descuento;
 
     public MenuEconomico(double desc, String nombre, double valor) {
-        super(nombre, valor);
+        super(nombre, valor);       
         this.descuento = desc;
+        
     }
     
-    public void establecerDescuento(double desceunto) {
-        this.descuento = ((valorIniM * desceunto) / 100);
+    public MenuEconomico(String nombre, double valor, double desc) {
+        super(nombre, valor);       
+        this.descuento = desc;
+        
+    }
+    
+    public void establecerDescuento(double descuento) {
+        this.descuento = descuento;
     }
     
     @Override
     public void establecerValorM(){
-        valorM = (valorIniM  - descuento);      
+        valorM = valorIniM  - ((valorIniM * descuento) / 100);      
     }
 
     public double obtenerDescuento() {

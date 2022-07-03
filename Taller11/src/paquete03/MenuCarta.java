@@ -16,6 +16,16 @@ public class MenuCarta extends Menu {
         this.valorPGuarnicion = valorG;
         this.valorBebida = valorB;
         porcentaje = prctj;
+        establecerPorcentaje(prctj);
+    }
+    
+    public MenuCarta(String nombre, double valor, double valorG, double valorB, 
+            double prctj) {
+        super(nombre, valor);
+        this.valorPGuarnicion = valorG;
+        this.valorBebida = valorB;
+        porcentaje = prctj;
+        establecerPorcentaje(prctj);
     }
     
      
